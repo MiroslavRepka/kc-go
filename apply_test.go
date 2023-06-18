@@ -9,7 +9,7 @@ var (
 	singleResource = `apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx-0
 spec:
   containers:
   - name: nginx
@@ -20,7 +20,7 @@ spec:
 	multipleResource = `apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx-1
 spec:
   containers:
   - name: nginx
@@ -31,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx-2
 spec:
   containers:
   - name: nginx
@@ -46,6 +46,9 @@ func TestApplyString(t *testing.T) {
 		t.Error(err)
 	}
 	if err := kc.ApplyString(multipleResource, "default"); err != nil {
+		t.Error(err)
+	}
+	if err := kc.ApplyFile("./testdata/dep.yaml", "default"); err != nil {
 		t.Error(err)
 	}
 }

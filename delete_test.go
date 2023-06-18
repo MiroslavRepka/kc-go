@@ -16,4 +16,7 @@ func TestDelete(t *testing.T) {
 	if err := kc.DeleteFile("./testdata/dep.yaml", "default"); err != nil {
 		t.Error(err)
 	}
+	if err := kc.DeleteResource("pods", "nginx", "default"); err != nil {
+		t.Error(err)
+	}
 }

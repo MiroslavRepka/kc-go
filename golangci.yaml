@@ -1,0 +1,48 @@
+# Refer to golangci-lint's example config file for more options and information:
+# https://github.com/golangci/golangci-lint/blob/master/.golangci.example.yml
+# https://golangci-lint.run/usage/configuration/#config-file
+
+run:
+  timeout: 10m
+
+linters:
+  disable-all: true
+  enable:
+    - asciicheck
+    - bidichk
+    - gofmt
+    - govet
+    - unconvert
+    - staticcheck
+    - ineffassign
+    - unparam
+    - gomodguard
+    - errcheck
+    - errname
+    - errorlint
+    - gosimple
+    - typecheck
+    - unused
+    - bodyclose
+    - durationcheck
+    - exhaustive
+    - exportloopref
+    - goconst
+    - tenv
+    - wastedassign
+    - whitespace
+    - goprintffuncname
+    - misspell
+    - noctx
+    - predeclared
+    - dogsled
+issues:
+  max-same-issues: 50
+
+linters-settings:
+  govet:
+    enable-all: true
+  exhaustive:
+    check:
+      - switch
+      - map

@@ -1,9 +1,5 @@
-# Refer to golangci-lint's example config file for more options and information:
-# https://github.com/golangci/golangci-lint/blob/master/.golangci.example.yml
-# https://golangci-lint.run/usage/configuration/#config-file
-
 run:
-  timeout: 10m
+  timeout: 3m
 
 linters:
   disable-all: true

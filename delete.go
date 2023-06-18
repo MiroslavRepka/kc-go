@@ -48,9 +48,8 @@ func (kc *Kc) delete(yml, namespace string) error {
 		return fmt.Errorf("failed to build resource interface : %w", err)
 	}
 
-	// Apply string
 	if err = dr.Delete(kc.ctx, obj.GetName(), v1.DeleteOptions{}); err != nil {
-		return fmt.Errorf("failed to apply provided string : %w", err)
+		return fmt.Errorf("failed to delete provided string : %w", err)
 	}
 
 	return nil
